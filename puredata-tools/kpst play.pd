@@ -1,0 +1,737 @@
+#N canvas 1885 281 1433 684 12;
+#N canvas 2568 171 668 339 kpst-wrap 0;
+#X obj 9 274 kpst~ 55 0.99 0.99 0.99, f 76;
+#X obj 9 5 inlet;
+#X obj 9 298 outlet~;
+#X msg 9 178 \$1 bang;
+#X obj 9 107 t b b b b b, f 76;
+#X obj 55 5 inlet;
+#X obj 222 5 inlet;
+#X obj 317 5 inlet;
+#X obj 55 29 s \$0-inum;
+#X obj 27 132 r \$0-inum;
+#X obj 422 5 inlet;
+#X obj 566 5 inlet;
+#N canvas 1746 173 1549 464 \$0-impulses 0;
+#X obj 25 23 inlet;
+#X obj 23 425 outlet~;
+#X obj 25 95 sam~;
+#X obj 287 115 tabplay~ impulse2;
+#X obj 419 115 tabplay~ impulse3;
+#X obj 550 115 tabplay~ impulse4;
+#X obj 680 115 tabplay~ impulse5;
+#X obj 84 106 noise~;
+#X msg 123 159 1;
+#X msg 156 159 0;
+#X obj 156 133 del 2;
+#X obj 84 216 *~ 0;
+#X obj 25 50 route 0 1 2 3 4 5 6 7 8 9, f 188;
+#X obj 810 115 tabplay~ impulse6;
+#X obj 943 115 tabplay~ impulse7;
+#X obj 1073 115 tabplay~ impulse8;
+#X obj 1203 115 tabplay~ impulse9;
+#X connect 0 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 11 0;
+#X connect 8 0 11 1;
+#X connect 9 0 11 1;
+#X connect 10 0 9 0;
+#X connect 11 0 1 0;
+#X connect 12 0 2 0;
+#X connect 12 1 10 0;
+#X connect 12 1 8 0;
+#X connect 12 2 3 0;
+#X connect 12 3 4 0;
+#X connect 12 4 5 0;
+#X connect 12 5 6 0;
+#X connect 12 6 13 0;
+#X connect 12 7 14 0;
+#X connect 12 8 15 0;
+#X connect 12 9 16 0;
+#X connect 12 10 2 0;
+#X connect 13 0 1 0;
+#X connect 14 0 1 0;
+#X connect 15 0 1 0;
+#X connect 16 0 1 0;
+#X restore 9 201 pd \$0-impulses;
+#X obj 137 5 inlet;
+#X obj 222 29 s \$0-p;
+#X obj 166 177 r \$0-p;
+#X obj 137 77 s \$0-vel;
+#X obj 141 200 f 55;
+#X obj 9 155 f 0;
+#X obj 405 200 f 0.99;
+#X obj 538 200 f 0.99;
+#X obj 291 176 r \$0-fing;
+#X obj 317 53 s \$0-fing;
+#X obj 422 29 s \$0-f-feed;
+#X obj 444 177 r \$0-f-feed;
+#X obj 577 177 r \$0-b-feed;
+#X obj 566 29 s \$0-b-feed;
+#X obj 137 29 * 0.0075;
+#X obj 137 53 + 0.0475;
+#X obj 273 200 f 1;
+#X obj 317 29 / 127;
+#X obj 9 250 *~ 0.8;
+#X obj 48 226 r \$0-vel;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 3 0 12 0;
+#X connect 4 0 18 0;
+#X connect 4 1 17 0;
+#X connect 4 2 29 0;
+#X connect 4 3 19 0;
+#X connect 4 4 20 0;
+#X connect 5 0 8 0;
+#X connect 6 0 14 0;
+#X connect 7 0 30 0;
+#X connect 9 0 18 1;
+#X connect 10 0 23 0;
+#X connect 11 0 26 0;
+#X connect 12 0 31 0;
+#X connect 13 0 27 0;
+#X connect 15 0 17 1;
+#X connect 17 0 0 1;
+#X connect 18 0 3 0;
+#X connect 19 0 0 3;
+#X connect 20 0 0 4;
+#X connect 21 0 29 1;
+#X connect 24 0 19 1;
+#X connect 25 0 20 1;
+#X connect 27 0 28 0;
+#X connect 28 0 16 0;
+#X connect 29 0 0 2;
+#X connect 30 0 22 0;
+#X connect 31 0 0 0;
+#X connect 32 0 31 1;
+#X restore 45 175 pd kpst-wrap;
+#X f 44;
+#X obj 45 141 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 95 152 5 0 0 0 - - -;
+#X obj 146 36 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9300 1;
+#X obj 248 38 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9100 1;
+#X obj 195 39 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3400 1;
+#X obj 45 207 *~ 0.8;
+#X obj 41 254 dac~;
+#X msg 299 146 0.99;
+#X msg 350 146 0.99;
+#X obj 95 130 r isel;
+#N canvas 1233 257 1016 555 impulses 0;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse2 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 12 23 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse3 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 212 23 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse4 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 412 23 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse5 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 612 23 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse6 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 12 215 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse7 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 212 215 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse8 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 412 215 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse9 515 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X coords 0 -1 515 1 200 140 1 0 0;
+#X restore 612 215 graph;
+#X restore 168 415 pd impulses;
+#N canvas 2588 162 584 641 impulse-selector 1;
+#X obj 351 82 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144 -1
+-1;
+#X text 153 41 single-sample impulse:;
+#X text 167 61 noise-burst impulse:;
+#X obj 351 102 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 351 122 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 351 142 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 351 162 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 351 182 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 351 202 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 351 222 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
+-1 -1;
+#X obj 311 82 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 42 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 62 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 142 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 102 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 122 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 182 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 162 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 202 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 311 222 tgl 15 0 empty empty sel 17 7 0 10 -262144 -1 -1 0 1
+;
+#X text 244 81 impulse2:;
+#X text 244 101 impulse3:;
+#X text 244 121 impulse4:;
+#X text 244 141 impulse5:;
+#X text 244 161 impulse6:;
+#X text 245 181 impulse7:;
+#X text 244 201 impulse8:;
+#X text 244 221 impulse9:;
+#X obj 407 97 s 2clear;
+#X obj 407 117 s 3clear;
+#X obj 407 137 s 4clear;
+#X obj 407 157 s 5clear;
+#X obj 407 177 s 6clear;
+#X obj 407 197 s 7clear;
+#X obj 407 217 s 8clear;
+#X obj 407 237 s 9clear;
+#X obj 17 23 r back0;
+#X obj 17 43 r back1;
+#X obj 17 63 r back2;
+#X obj 17 83 r back3;
+#X obj 17 103 r back4;
+#X obj 17 123 r back5;
+#X obj 17 143 r back6;
+#X obj 17 163 r back7;
+#X obj 17 183 r back8;
+#X obj 17 203 r back9;
+#X obj 87 57 s send0;
+#X obj 87 77 s send1;
+#X obj 87 97 s send2;
+#X obj 87 117 s send3;
+#X obj 87 137 s send4;
+#X obj 87 157 s send5;
+#X obj 87 177 s send6;
+#X obj 87 197 s send7;
+#X obj 87 217 s send8;
+#X obj 87 237 s send9;
+#X obj 16 273 r send0;
+#N canvas 2229 399 215 307 c0 0;
+#X obj 17 14 inlet;
+#X obj 148 112 s back1;
+#X obj 148 132 s back2;
+#X obj 148 152 s back3;
+#X obj 148 172 s back4;
+#X obj 148 192 s back5;
+#X obj 148 212 s back6;
+#X obj 148 232 s back7;
+#X obj 148 252 s back8;
+#X obj 148 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X connect 0 0 11 0;
+#X connect 10 0 1 0;
+#X connect 10 0 2 0;
+#X connect 10 0 3 0;
+#X connect 10 0 4 0;
+#X connect 10 0 5 0;
+#X connect 10 0 6 0;
+#X connect 10 0 7 0;
+#X connect 10 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 11 0 13 0;
+#X connect 13 0 12 0;
+#X restore 16 297 pd c0;
+#X obj 16 321 s \$0-out;
+#X obj 16 434 r \$0-out;
+#X obj 16 458 outlet;
+#X obj 86 321 s \$0-out;
+#X obj 156 321 s \$0-out;
+#X obj 226 321 s \$0-out;
+#X obj 296 321 s \$0-out;
+#X obj 86 273 r send1;
+#X obj 156 273 r send2;
+#X obj 226 273 r send3;
+#X obj 296 273 r send4;
+#N canvas 1680 25 215 307 c1 0;
+#X obj 17 14 inlet;
+#X obj 148 132 s back2;
+#X obj 148 152 s back3;
+#X obj 148 172 s back4;
+#X obj 148 192 s back5;
+#X obj 148 212 s back6;
+#X obj 148 232 s back7;
+#X obj 148 252 s back8;
+#X obj 148 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 148 92 s back0;
+#X connect 0 0 10 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 9 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X restore 86 297 pd c1;
+#N canvas 1896 25 215 307 c2 0;
+#X obj 17 14 inlet;
+#X obj 148 112 s back1;
+#X obj 148 152 s back3;
+#X obj 148 172 s back4;
+#X obj 148 192 s back5;
+#X obj 148 212 s back6;
+#X obj 148 232 s back7;
+#X obj 148 252 s back8;
+#X obj 148 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 148 92 s back0;
+#X connect 0 0 10 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 9 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X restore 156 297 pd c2;
+#N canvas 2112 25 215 307 c3 0;
+#X obj 17 14 inlet;
+#X obj 147 112 s back1;
+#X obj 147 132 s back2;
+#X obj 147 192 s back5;
+#X obj 147 212 s back6;
+#X obj 147 232 s back7;
+#X obj 147 252 s back8;
+#X obj 147 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 147 92 s back0;
+#X obj 147 172 s back4;
+#X connect 0 0 9 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 8 0 12 0;
+#X connect 8 0 13 0;
+#X connect 9 0 8 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X restore 226 297 pd c3;
+#N canvas 2328 25 215 307 c4 0;
+#X obj 17 14 inlet;
+#X obj 147 112 s back1;
+#X obj 147 132 s back2;
+#X obj 147 152 s back3;
+#X obj 147 212 s back6;
+#X obj 147 232 s back7;
+#X obj 147 252 s back8;
+#X obj 147 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 147 92 s back0;
+#X obj 147 192 s back5;
+#X connect 0 0 9 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 8 0 12 0;
+#X connect 8 0 13 0;
+#X connect 9 0 8 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X restore 296 297 pd c4;
+#X obj 16 401 s \$0-out;
+#X obj 86 401 s \$0-out;
+#X obj 156 401 s \$0-out;
+#X obj 226 401 s \$0-out;
+#X obj 296 401 s \$0-out;
+#X obj 16 353 r send5;
+#N canvas 2544 25 215 307 c5 0;
+#X obj 17 14 inlet;
+#X obj 148 112 s back1;
+#X obj 148 132 s back2;
+#X obj 148 152 s back3;
+#X obj 148 172 s back4;
+#X obj 148 232 s back7;
+#X obj 148 252 s back8;
+#X obj 148 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 148 92 s back0;
+#X obj 148 212 s back6;
+#X connect 0 0 9 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X connect 8 0 12 0;
+#X connect 8 0 13 0;
+#X connect 9 0 8 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X restore 16 377 pd c5;
+#X obj 86 353 r send6;
+#N canvas 2976 25 215 307 c7 0;
+#X obj 17 14 inlet;
+#X obj 148 112 s back1;
+#X obj 148 132 s back2;
+#X obj 148 152 s back3;
+#X obj 148 172 s back4;
+#X obj 148 192 s back5;
+#X obj 148 212 s back6;
+#X obj 148 252 s back8;
+#X obj 148 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 148 92 s back0;
+#X connect 0 0 10 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 9 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X restore 156 377 pd c7;
+#N canvas 2760 25 215 307 c6 0;
+#X obj 17 14 inlet;
+#X obj 148 112 s back1;
+#X obj 148 132 s back2;
+#X obj 148 152 s back3;
+#X obj 148 172 s back4;
+#X obj 148 192 s back5;
+#X obj 148 232 s back7;
+#X obj 148 252 s back8;
+#X obj 148 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 148 92 s back0;
+#X connect 0 0 10 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 9 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X restore 86 377 pd c6;
+#X obj 156 353 r send7;
+#X obj 226 353 r send8;
+#N canvas 3192 25 215 307 c8 0;
+#X obj 17 14 inlet;
+#X obj 137 112 s back1;
+#X obj 137 132 s back2;
+#X obj 137 152 s back3;
+#X obj 137 172 s back4;
+#X obj 137 192 s back5;
+#X obj 137 212 s back6;
+#X obj 137 232 s back7;
+#X obj 137 272 s back9;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 137 92 s back0;
+#X connect 0 0 10 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 9 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X restore 226 377 pd c8;
+#X obj 296 353 r send9;
+#N canvas 3408 25 215 307 c9 0;
+#X obj 17 14 inlet;
+#X obj 148 112 s back1;
+#X obj 148 132 s back2;
+#X obj 148 152 s back3;
+#X obj 148 172 s back4;
+#X obj 148 192 s back5;
+#X obj 148 212 s back6;
+#X obj 148 232 s back7;
+#X obj 148 252 s back8;
+#X msg 55 68 0;
+#X obj 17 38 sel 1;
+#X obj 17 272 outlet;
+#X msg 17 246 1;
+#X obj 148 92 s back0;
+#X connect 0 0 10 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
+#X connect 9 0 3 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 9 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X restore 296 377 pd c9;
+#X connect 0 0 28 0;
+#X connect 3 0 29 0;
+#X connect 4 0 30 0;
+#X connect 5 0 31 0;
+#X connect 6 0 32 0;
+#X connect 7 0 33 0;
+#X connect 8 0 34 0;
+#X connect 9 0 35 0;
+#X connect 10 0 48 0;
+#X connect 11 0 46 0;
+#X connect 12 0 47 0;
+#X connect 13 0 51 0;
+#X connect 14 0 49 0;
+#X connect 15 0 50 0;
+#X connect 16 0 53 0;
+#X connect 17 0 52 0;
+#X connect 18 0 54 0;
+#X connect 19 0 55 0;
+#X connect 36 0 11 0;
+#X connect 37 0 12 0;
+#X connect 38 0 10 0;
+#X connect 39 0 14 0;
+#X connect 40 0 15 0;
+#X connect 41 0 13 0;
+#X connect 42 0 17 0;
+#X connect 43 0 16 0;
+#X connect 44 0 18 0;
+#X connect 45 0 19 0;
+#X connect 56 0 57 0;
+#X connect 57 0 58 0;
+#X connect 59 0 60 0;
+#X connect 65 0 69 0;
+#X connect 66 0 70 0;
+#X connect 67 0 71 0;
+#X connect 68 0 72 0;
+#X connect 69 0 61 0;
+#X connect 70 0 62 0;
+#X connect 71 0 63 0;
+#X connect 72 0 64 0;
+#X connect 78 0 79 0;
+#X connect 79 0 73 0;
+#X connect 80 0 82 0;
+#X connect 81 0 75 0;
+#X connect 82 0 74 0;
+#X connect 83 0 81 0;
+#X connect 84 0 85 0;
+#X connect 85 0 76 0;
+#X connect 86 0 87 0;
+#X connect 87 0 77 0;
+#X coords 0 -1 1 1 250 240 1 150 10;
+#X restore 464 113 pd impulse-selector;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 2;
+#X connect 4 0 0 4;
+#X connect 5 0 0 3;
+#X connect 6 0 7 0;
+#X connect 6 0 7 1;
+#X connect 8 0 0 5;
+#X connect 9 0 0 6;
+#X connect 10 0 2 0;

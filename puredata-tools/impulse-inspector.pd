@@ -1,0 +1,136 @@
+#N canvas 2372 297 837 428 12;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse2 19 float 3;
+#A 0 -0.0190301 0 -0.0190301 -0.073223 -0.154329 -0.249999 -0.34567
+-0.426776 -0.480969 -0.5 -0.48097 -0.426778 -0.345672 -0.250001 -0.15433
+-0.073224 -0.0190306 -3.52077e-12 -0.0190296;
+#X coords 0 -1 19 1 200 140 1 0 0;
+#X restore 5 33 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse3 19 float 3;
+#A 0 -0.0190301 0 -0.0190301 -0.073223 -0.15 -0.249999 -0.34567 -0.426776
+-0.480969 -0.5 -0.48097 -0.426778 -0.371428 -0.221428 -0.15433 -0.057143
+-0.0190306 -3.52077e-12 -0.0190296;
+#X coords 0 -1 19 1 200 140 2 0 0;
+#X restore 205 33 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse4 19 float 3;
+#A 0 -0.0190301 0 -0.0190301 -0.0357143 -0.192857 -0.307143 -0.34567
+-0.426776 -0.480969 -0.5 -0.414286 -0.385715 -0.345672 -0.250001 -0.15433
+-0.073224 -0.0190306 -3.52077e-12 -0.0190296;
+#X coords 0 -1 19 1 200 140 1 0 0;
+#X restore 405 33 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse5 19 float 3;
+#A 0 -0.0190301 0 -0.0190301 -0.073223 -0.178572 -0.249999 -0.314285
+-0.426776 -0.480969 -0.5 -0.48097 -0.378572 -0.345672 -0.250001 -0.2
+-0.0642855 -0.0190306 -3.52077e-12 -0.0190296;
+#X coords 0 -1 19 1 200 140 1 0 0;
+#X restore 605 33 graph;
+#N canvas 260 74 927 700 (subpatch) 0;
+#X array impulse6 19 float 3;
+#A 0 -0.0190301 0.0357143 -0.0190301 -0.073223 -0.121428 -0.249999
+-0.314285 -0.364285 -0.480969 -0.5 -0.48097 -0.392857 -0.392857 -0.25
+-0.15433 -0.073224 -0.0190306 -3.52077e-12 -0.0190296;
+#X coords 0 -1 19 1 200 140 1 0 0;
+#X restore 5 191 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse7 19 float 3;
+#A 0 -0.019783 0.0222762 -0.0297019 -0.0761201 -0.163361 -0.237615
+-0.289593 -0.363849 -0.499999 -0.482656 -0.5 -0.415826 -0.359348 -0.267317
+-0.103957 -0.0761212 -0.0197836 -3.66007e-12 -0.0197825;
+#X coords 0 -1 19 1 200 140 1 0 0;
+#X restore 205 191 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse8 19 float 3;
+#A 0 -0.0190301 0 -0.0190301 -0.073223 -0.164285 -0.264286 -0.34567
+-0.414286 -0.480969 -0.5 -0.45 -0.426778 -0.371428 -0.250001 -0.192857
+-0.073224 -0.0190306 -3.52077e-12 -0.0190296;
+#X coords 0 -1 19 1 200 140 1 0 0;
+#X restore 405 191 graph;
+#N canvas 0 25 927 700 (subpatch) 0;
+#X array impulse9 19 float 3;
+#A 0 -0.0190301 0 -0.0190301 -0.0642855 -0.154329 -0.271428 -0.34567
+-0.392857 -0.480969 -0.5 -0.48097 -0.392857 -0.345672 -0.221429 -0.128571
+-0.073224 -0.0190306 -3.52077e-12 -0.0190296;
+#X coords 0 -1 19 1 200 140 1 0 0;
+#X restore 605 191 graph;
+#X obj 10 348 inlet;
+#N canvas 3151 228 336 302 \$0-impulse-clear 0;
+#X obj 8 9 inlet;
+#X obj 8 33 s \$0-1;
+#X obj 8 63 r \$0-1;
+#X obj 8 87 sel 2;
+#X obj 88 63 r \$0-1;
+#X obj 88 87 sel 3;
+#X obj 168 63 r \$0-1;
+#X obj 248 63 r \$0-1;
+#X obj 168 87 sel 4;
+#X obj 248 87 sel 5;
+#X obj 8 183 r \$0-1;
+#X obj 88 183 r \$0-1;
+#X obj 168 183 r \$0-1;
+#X obj 248 183 r \$0-1;
+#X obj 8 207 sel 6;
+#X obj 88 207 sel 7;
+#X obj 168 207 sel 8;
+#X obj 248 207 sel 9;
+#X msg 8 111 \; impulse2 cosinesum 16 -0.5 0.5, f 9;
+#X msg 88 111 \; impulse3 cosinesum 16 -0.5 0.5, f 9;
+#X msg 168 111 \; impulse4 cosinesum 16 -0.5 0.5, f 9;
+#X msg 248 111 \; impulse5 cosinesum 16 -0.5 0.5, f 9;
+#X msg 8 231 \; impulse6 cosinesum 16 -0.5 0.5, f 9;
+#X msg 88 231 \; impulse7 cosinesum 16 -0.5 0.5, f 9;
+#X msg 168 231 \; impulse8 cosinesum 16 -0.5 0.5, f 9;
+#X msg 248 231 \; impulse9 cosinesum 16 -0.5 0.5, f 9;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 18 0;
+#X connect 4 0 5 0;
+#X connect 5 0 19 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 20 0;
+#X connect 9 0 21 0;
+#X connect 10 0 14 0;
+#X connect 11 0 15 0;
+#X connect 12 0 16 0;
+#X connect 13 0 17 0;
+#X connect 14 0 22 0;
+#X connect 15 0 23 0;
+#X connect 16 0 24 0;
+#X connect 17 0 25 0;
+#X restore 10 370 pd \$0-impulse-clear;
+#N canvas 2570 339 336 302 \$0-impulse-norm 0;
+#X obj 8 9 inlet;
+#X msg 8 111 \; impulse2 normalize 0.5, f 9;
+#X msg 88 111 \; impulse3 normalize 0.5, f 9;
+#X msg 168 111 \; impulse4 normalize 0.5, f 9;
+#X msg 248 111 \; impulse5 normalize 0.5, f 9;
+#X msg 8 231 \; impulse6 normalize 0.5, f 9;
+#X msg 88 231 \; impulse7 normalize 0.5, f 9;
+#X msg 168 231 \; impulse8 normalize 0.5, f 9;
+#X msg 248 231 \; impulse9 normalize 0.5, f 9;
+#X obj 8 33 s \$0-2;
+#X obj 8 63 r \$0-2;
+#X obj 88 63 r \$0-2;
+#X obj 168 63 r \$0-2;
+#X obj 248 63 r \$0-2;
+#X obj 8 183 r \$0-2;
+#X obj 88 183 r \$0-2;
+#X obj 168 183 r \$0-2;
+#X obj 248 183 r \$0-2;
+#X connect 0 0 9 0;
+#X connect 10 0 1 0;
+#X connect 11 0 2 0;
+#X connect 12 0 3 0;
+#X connect 13 0 4 0;
+#X connect 14 0 5 0;
+#X connect 15 0 6 0;
+#X connect 16 0 7 0;
+#X connect 17 0 8 0;
+#X restore 154 370 pd \$0-impulse-norm;
+#X obj 154 345 r normer;
+#X connect 8 0 9 0;
+#X connect 11 0 10 0;
+#X coords 0 -1 1 1 810 335 1 0 0;
