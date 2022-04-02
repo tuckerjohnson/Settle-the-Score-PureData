@@ -225,7 +225,7 @@
 #X msg 75 52 set \$1;
 #X msg 75 76 0;
 #X msg 22 52 set \$1;
-#X msg 22 76 866.822;
+#X msg 22 76 0;
 #X obj 22 5 loadbang;
 #X obj 305 341 dbtorms;
 #X obj 362 341 dbtorms;
@@ -419,7 +419,7 @@
 #X text 349 165 CLICK;
 #X text 196 160 Output;
 #X msg 466 171 set \$1;
-#X msg 466 195 940;
+#X msg 466 195 802.52;
 #X obj 467 122 + 100;
 #X obj 467 146 * 10;
 #X obj 461 43 loadbang;
