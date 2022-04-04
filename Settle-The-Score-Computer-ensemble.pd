@@ -1,4 +1,4 @@
-#N canvas 545 183 351 513 12;
+#N canvas 428 167 351 513 12;
 #X declare -path puredata-tools;
 #N canvas 823 196 578 410 mnco 0;
 #X obj 107 17 r co;
@@ -419,7 +419,7 @@
 #X text 349 165 CLICK;
 #X text 196 160 Output;
 #X msg 466 171 set \$1;
-#X msg 466 195 802.52;
+#X msg 466 195 700;
 #X obj 467 122 + 100;
 #X obj 467 146 * 10;
 #X obj 461 43 loadbang;
